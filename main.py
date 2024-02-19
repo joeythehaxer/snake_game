@@ -1,5 +1,6 @@
 import time
 from turtle import Screen, Turtle
+
 from food import Food
 from snake import Snake
 
@@ -34,3 +35,7 @@ while game_is_on:
     screen.update()
     snake.move()
     time.sleep(0.1)
+
+    # food collision detection
+    if snake.head.distance(food) < 15:
+        food.refresh()
